@@ -33,16 +33,16 @@ function App() { return <BrowserRouter basename={import.meta.env.BASE_URL}><FitP
 function FitPulseApp() {
   const location = useLocation()
   const navigate = useNavigate()
-  if (location.pathname === '/') return <LandingPage />
-  if (location.pathname === '/login') return <LoginPage />
-  if (location.pathname === '/admin') return <AdminPage />
-  if (location.pathname === '/admin-legacy') return <AdminPageLegacy />
   const [activities, setActivities] = useState(starterActivities)
   const [dark, setDark] = useState(false)
   const [showLog, setShowLog] = useState(false)
   const [showSearch, setShowSearch] = useState(false)
   const [showNotifications, setShowNotifications] = useState(false)
   const [toast, setToast] = useState('')
+  if (location.pathname === '/') return <LandingPage />
+  if (location.pathname === '/login') return <LoginPage />
+  if (location.pathname === '/admin') return <AdminPage />
+  if (location.pathname === '/admin-legacy') return <AdminPageLegacy />
   const minutes = activities.reduce((sum, item) => sum + item.duration, 0)
   const xp = 1840 + activities.reduce((sum, item) => sum + item.xp, 0) - 235
   const progress = Math.min(100, Math.round((minutes / 360) * 100))
