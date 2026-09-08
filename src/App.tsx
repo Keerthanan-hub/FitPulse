@@ -28,7 +28,7 @@ const sportCards = [
 ]
 const starterActivities: ActivityItem[] = [{ name: 'Morning walk', type: 'Walking', duration: 32, distance: 2.8, xp: 80, date: 'Today, 7:10 AM' }, { name: 'Mobility flow', type: 'Yoga', duration: 18, distance: 0, xp: 45, date: 'Yesterday, 6:40 PM' }, { name: 'Campus cycling', type: 'Cycling', duration: 42, distance: 8.4, xp: 110, date: 'Sep 05, 5:20 PM' }]
 
-function App() { return <BrowserRouter><FitPulseApp /></BrowserRouter> }
+function App() { return <BrowserRouter basename={import.meta.env.BASE_URL}><FitPulseApp /></BrowserRouter> }
 
 function FitPulseApp() {
   const location = useLocation()
